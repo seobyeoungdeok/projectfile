@@ -1,0 +1,65 @@
+
+
+/* 1. 전체 레이아웃: 화면 높이를 꽉 채우고 위아래로 나눔 */
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* 화면 높이 100% 사용 */
+  font-family: 'Arial', sans-serif;
+}
+
+/* 2. 헤더 스타일: 배경색을 넣고 글자를 가운데 정렬 */
+.header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* 3. 본문 영역: 사이드바와 달력을 가로로 나열 */
+.main-content {
+  display: flex;
+  flex: 1; /* 남은 높이를 모두 차지 */
+  overflow: hidden; /* 스크롤 방지 */
+}
+
+/* 4. 사이드바 스타일: 회색 배경에 너비 고정 */
+.sidebar {
+  width: 250px;
+  background-color: #ecf0f1;
+  padding: 20px;
+  border-right: 1px solid #bdc3c7;
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* 요소 사이 간격 */
+}
+
+/* 5. 달력 영역 스타일: 남은 모든 공간을 차지 */
+.calendar-container {
+  flex: 1;
+  padding: 20px;
+  background-color: white;
+  overflow-y: auto; /* 달력이 길어지면 내부 스크롤 */
+}
+
+/* 6. 일정 추가 버튼 스타일 */
+.add-btn {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.add-btn:hover {
+  background-color: #2980b9;
+}
