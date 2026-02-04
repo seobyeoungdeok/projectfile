@@ -59,3 +59,22 @@ cd projectfile
     * **원인:** 윈도우 서비스에서 MySQL 서버가 중지(Stopped) 상태였음.
     * **해결:** 서비스 관리자에서 MySQL을 '시작' 상태로 변경하여 해결.
 ```
+
+1. Git Protocol Error (fatal: protocol '[https' is not supported)
+   상황: 원격 저장소 연결 중 [https 프로토콜을 지원하지 않는다는 에러 발생.
+
+원인: 가이드 문서의 [repository-url] 표기를 실제 명령어에 대괄호([])까지 포함하여 입력함.
+
+해결: git remote remove origin 명령어로 잘못된 연결을 초기화한 후, 괄호를 제외한 순수 URL만 사용하여 재연결 성공.
+
+교훈: CLI(Command Line Interface) 환경에서는 문장 부호 하나도 엄격하게 해석됨을 인지하고, 가이드라인의 표기법을 더 꼼꼼히 확인하는 습관을 지님.
+
+2. Remote Origin Conflict (fatal: remote origin already exists.)
+   상황: 저장소 주소를 다시 등록하려 할 때 이미 존재한다는 에러 발생.
+
+해결: git remote set-url origin [URL] 또는 git remote remove origin을 통해 기존 연결을 갱신하거나 삭제 후 재등록하여 해결.
+
+3. VS Code & GitHub Authentication Timeout
+   상황: 브라우저 인증 후 VS Code로 제어권이 넘어오지 않아 전송이 멈춤.
+
+해결: VS Code 프로세스 재시작 및 Ctrl + C를 통한 터미널 세션 강제 종료 후 재시도하여 인증 성공.
